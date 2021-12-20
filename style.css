@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap");
+
+/** Resets **/
+:root {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+ul,
+p {
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+/** Styles **/
+body {
+  --clr-primary-very-dark-magenta: hsl(300, 43%, 22%);
+  --clr-primary-soft-pink: hsl(333, 80%, 67%);
+
+  --dark-grayish-magenta: hsl(303, 10%, 53%);
+  --light-grayish-magenta: hsl(300, 24%, 96%);
+  --white: hsl(0, 0%, 100%);
+
+  --border-radius: 8px;
+
+  font-family: "Spartan", sans-serif;
+  font-size: 15px;
+  background: url(./images/bg-pattern-top-mobile.svg) top left no-repeat,
+    url(./images/bg-pattern-bottom-mobile.svg) bottom right no-repeat;
+}
+
+.main {
+  padding: 6em 1.5em 0;
+}
+
+.title {
+  color: var(--clr-primary-very-dark-magenta);
+  margin-bottom: 1em;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3em;
+}
+
+.header__prose {
+  color: var(--dark-grayish-magenta);
+  line-height: 1.6;
+}
+
+.ratings {
+  margin-bottom: 3.5em;
+}
+
+.ratings > * + * {
+  margin-top: 1em;
+}
+
+.rating  {
+  color: var(--clr-primary-very-dark-magenta);
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  align-items: center;
+  font-weight: 700;
+  background: var(--light-grayish-magenta);
+  border-radius: var(--border-radius);
+  padding: 1em;
+}
+
+.rating__visual {
+  display: flex;
+  gap: 0.5em;
+}
+
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.card {
+  background: var(--clr-primary-very-dark-magenta);
+  color: var(--white);
+  padding: 3em 2em;
+  border-radius: var(--border-radius);
+}
+
+.card__header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1.5em;
+  row-gap: 0.25em;
+  margin-bottom: 2em;
+}
+.card__image {
+  width: 42px;
+  border-radius: 50%;
+  grid-row: span 2;
+  align-self: center;
+}
+
+.card__author {
+  font-size: 15px;
+  align-self: end;
+}
+
+.card__author-status {
+  color: var(--clr-primary-soft-pink);
+}
+
+.card__body {
+  line-height: 1.6;
+}
+
+/** Utility classes **/
+
+.hidden:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
