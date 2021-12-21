@@ -44,18 +44,51 @@ body {
     url(./images/bg-pattern-bottom-mobile.svg) bottom right no-repeat;
 }
 
+@media (min-width: 900px) {
+  body {
+    background: url(./images/bg-pattern-top-desktop.svg) top left no-repeat,
+      url(./images/bg-pattern-bottom-desktop.svg) bottom right no-repeat;
+  }
+}
+
 .main {
-  padding: 6em 1.5em 0;
+  width: 92%;
+  max-width: 1200px;
+  margin: 5em auto;
+}
+
+@media (min-width: 900px) {
+  .main {
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    column-gap: 9em;
+    margin-top: 9em;
+  }
 }
 
 .title {
   color: var(--clr-primary-very-dark-magenta);
-  margin-bottom: 1em;
+  max-width: 12ch;
+  margin: 0 auto 1em;
+}
+
+@media (min-width: 900px) {
+  .title {
+    font-size: 2.8rem;
+    margin: 0 0 0.25em;
+  }
 }
 
 .header {
   text-align: center;
   margin-bottom: 3em;
+}
+
+@media (min-width: 900px) {
+  .header {
+    text-align: initial;
+    margin-bottom: 4em;
+  }
 }
 
 .header__prose {
@@ -64,23 +97,43 @@ body {
 }
 
 .ratings {
-  margin-bottom: 3.5em;
-}
-
-.ratings > * + * {
-  margin-top: 1em;
-}
-
-.rating  {
-  color: var(--clr-primary-very-dark-magenta);
   display: flex;
   flex-direction: column;
   gap: 1em;
-  align-items: center;
+  margin-top: 1em;
+  margin-bottom: 3.5em;
+}
+
+.rating {
+  color: var(--clr-primary-very-dark-magenta);
   font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+  column-gap: 2em;
+  align-items: center;
+  padding: 1.25em 2em;
   background: var(--light-grayish-magenta);
   border-radius: var(--border-radius);
-  padding: 1em;
+}
+
+@media (min-width: 900px) {
+  .rating {
+    flex-direction: row;
+    width: 85%;
+  }
+
+  .rating:first-of-type {
+    align-self: flex-start;
+  }
+
+  .rating:nth-of-type(2) {
+    align-self: center;
+  }
+
+  .rating:nth-of-type(3) {
+    align-self: flex-end;
+  }
 }
 
 .rating__visual {
@@ -91,14 +144,38 @@ body {
 .testimonials {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  row-gap: 1em;
+  column-gap: 2em;
+}
+
+@media (min-width: 900px) {
+  .testimonials {
+    grid-column: span 2;
+    flex-direction: row;
+  }
+
+  .testimonials > :nth-of-type(2) {
+    position: relative;
+    top: 1em;
+  }
+
+  .testimonials > :nth-of-type(3) {
+    position: relative;
+    top: 2em;
+  }
 }
 
 .card {
   background: var(--clr-primary-very-dark-magenta);
   color: var(--white);
-  padding: 3em 2em;
+  padding: 3em 2em 2em;
   border-radius: var(--border-radius);
+}
+
+@media (min-width: 900px) {
+  .card {
+    flex: 1;
+  }
 }
 
 .card__header {
